@@ -27,7 +27,7 @@
     text-align: center;
   }
   
-  /* Background Ghibli Starry Sky Setup */
+  /* Background Ghibli Starry Sky */
   #sky {
     position: fixed; inset: 0; z-index: -2;
     background: 
@@ -44,44 +44,42 @@
     50% { opacity: 1; transform: scale(1.4); }
   }
 
-  /* Utility Classes replacing framework utilities */
   .container { width: 100%; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
   .font-display { font-family: 'Baloo 2', sans-serif; }
-  .font-hand { font-family: 'Caveat', cursive; font-size: 2rem; color: var(--gold); }
+  .font-hand { font-family: 'Caveat', cursive; font-size: 2.2rem; color: var(--gold); }
   
-  h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 20px; font-weight: 800; }
-  h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 15px; color: var(--gold); font-weight: 700; }
+  h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); margin-bottom: 20px; font-weight: 800; font-family: 'Baloo 2', sans-serif; line-height: 1.2; }
+  h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 15px; color: var(--gold); font-weight: 700; font-family: 'Baloo 2', sans-serif; }
   p { color: var(--lavender); font-size: 1.1rem; line-height: 1.6; }
 
-  /* Sections Arrangement */
-  section { min-height: 100vh; display: flex; flex-col; justify-content: center; align-items: center; padding: 60px 20px; position: relative; z-index: 1; }
+  section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 60px 20px; position: relative; z-index: 1; }
   .hidden { display: none !important; }
 
-  /* Universal Buttons styling */
   .btn {
     background: linear-gradient(135deg, var(--gold), #f5c453);
-    color: var(--night-deep); border: none; padding: 14px 32px;
+    color: var(--night-deep); border: none; padding: 14px 36px;
     font-size: 1.1rem; font-weight: 700; border-radius: 50px;
     cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
     box-shadow: 0 8px 20px rgba(246, 215, 139, 0.3); margin-top: 20px;
+    font-family: 'Quicksand', sans-serif;
   }
   .btn:active { transform: scale(0.96); }
+  
   .btn-outline {
     background: transparent; border: 1px solid rgba(246, 215, 139, 0.4);
-    color: var(--gold); padding: 8px 24px; font-size: 0.9rem; border-radius: 50px;
-    cursor: pointer; margin-top: 30px; transition: background 0.3s;
+    color: var(--gold); padding: 10px 24px; font-size: 0.95rem; border-radius: 50px;
+    cursor: pointer; margin-top: 30px; transition: background 0.3s, color 0.3s;
+    font-family: 'Quicksand', sans-serif;
   }
   .btn-outline:hover { background: rgba(246, 215, 139, 0.1); }
 
-  /* Grid structure rules */
-  .grid-countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; width: 100%; max-width: 500px; margin: 40px auto 20px; }
-  .count-box { background: rgba(253, 246, 232, 0.07); border: 1px solid rgba(246, 215, 139, 0.3); border-radius: 16px; padding: 20px 10px; }
-  .count-num { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; color: var(--gold); font-family: 'Baloo 2', sans-serif; }
-  .count-label { font-size: 0.75rem; text-transform: uppercase; tracking: 2px; margin-top: 4px; }
+  .grid-countdown { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; width: 100%; max-width: 550px; margin: 40px auto 20px; }
+  .count-box { background: rgba(253, 246, 232, 0.07); border: 1px solid rgba(246, 215, 139, 0.25); border-radius: 16px; padding: 20px 10px; }
+  .count-num { font-size: clamp(1.8rem, 5vw, 3.2rem); font-weight: 700; color: var(--gold); font-family: 'Baloo 2', sans-serif; line-height: 1; }
+  .count-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; color: var(--lavender); }
 
-  /* Interactive Cake Layers */
-  .cake-container { position: relative; width: 240px; height: 200px; margin: 40px auto; }
-  .candles-row { position: absolute; top: 15px; left: 50%; transform: translateX(-50%); display: flex; gap: 20px; z-index: 5; }
+  .cake-container { position: relative; width: 240px; height: 180px; margin: 40px auto; }
+  .candles-row { position: absolute; top: 0px; left: 50%; transform: translateX(-50%); display: flex; gap: 24px; z-index: 5; }
   .candle { width: 12px; height: 50px; border-radius: 4px 4px 0 0; position: relative; }
   .c1 { background-color: #f3aeb0; } .c2 { background-color: #f6d78b; } .c3 { background-color: #b9c3f2; }
   .flame {
@@ -96,52 +94,52 @@
   .flame.out { display: none !important; }
   .cake-body {
     width: 200px; height: 100px; background-color: #f472b6; border-radius: 20px 20px 10px 10px;
-    position: absolute; bottom: 10px; left: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    position: absolute; bottom: 10px; left: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.4);
     overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end;
   }
-  .cream-layer { width: 100%; height: 25px; background-color: #fff; opacity: 0.8; }
-  .frosting { width: 100%; height: 35px; background-color: #f43f5e; }
+  .cream-layer { width: 100%; height: 20px; background-color: #fff; opacity: 0.8; }
+  .frosting { width: 100%; height: 30px; background-color: #f43f5e; }
 
-  /* Custom Polaroid System layout rules */
-  .grid-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; margin-top: 50px; justify-items: center; }
+  .grid-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; margin-top: 50px; justify-items: center; width: 100%; }
   .polaroid {
-    background-color: #fdf8ee; padding: 16px 16px 40px 16px; border-radius: 4px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4); max-width: 280px; width: 100%; text-align: center;
+    background-color: #fdf8ee; padding: 16px 16px 45px 16px; border-radius: 4px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4); max-width: 280px; width: 100%; text-align: center;
+    transition: transform 0.3s ease;
   }
+  .polaroid:hover { transform: translateY(-8px) scale(1.02) !important; }
   .polaroid img { width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block; border-radius: 2px; }
-  .polaroid p { color: var(--text-dark); margin-top: 15px; font-weight: 600; }
+  .polaroid p { color: var(--text-dark); margin-top: 15px; font-weight: 600; font-family: 'Caveat', cursive; font-size: 1.8rem; line-height: 1.2; }
   .tilt-1 { transform: rotate(-3deg); } .tilt-2 { transform: rotate(3deg); } .tilt-3 { transform: rotate(-1deg); }
 
-  /* Movie Layout Setup */
-  .grid-movies { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 30px; margin-top: 50px; text-align: left; }
+  .grid-movies { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; margin-top: 50px; text-align: left; width: 100%; }
   @media (max-width: 450px) { .grid-movies { grid-template-columns: 1fr; } }
   .movie-card {
-    background: linear-gradient(135deg, rgba(59,74,140,0.4), rgba(20,27,60,0.6));
-    border: 1px solid rgba(246,215,139,0.2); border-radius: 20px; padding: 24px;
+    background: linear-gradient(135deg, rgba(59,74,140,0.35), rgba(20,27,60,0.6));
+    border: 1px solid rgba(246,215,139,0.18); border-radius: 20px; padding: 24px;
     display: flex; gap: 20px; align-items: center;
   }
   .movie-art {
-    width: 90px; height: 120px; background-color: #0c1024; border-radius: 10px;
+    width: 90px; height: 120px; background-color: #0c1024; border-radius: 12px;
     flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 2rem; overflow: hidden;
+    border: 1px solid rgba(246,215,139,0.15);
   }
   .movie-art img { width: 100%; height: 100%; object-fit: cover; }
-  .movie-info h3 { font-size: 1.3rem; margin-bottom: 8px; color: var(--gold); }
-  .movie-info p { color: rgba(253,246,232,0.8); font-size: 0.95rem; }
+  .movie-info h3 { font-size: 1.3rem; margin-bottom: 8px; color: var(--gold); font-family: 'Baloo 2', sans-serif; }
+  .movie-info p { color: rgba(253,246,232,0.8); font-size: 0.95rem; line-height: 1.5; }
 
-  /* Custom Audio Player interface */
-  .grid-audio { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin-top: 50px; }
+  .grid-audio { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin-top: 50px; width: 100%; }
   .tv-frame {
     background: linear-gradient(135deg, #4a3a2a, #2c2015); border-radius: 28px;
     padding: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.4); text-align: center;
+    border: 2px solid rgba(246,215,139,0.1);
   }
-  .tv-screen { background-color: #0c1024; border-radius: 16px; padding: 20px 10px; }
-  .tv-frame audio { width: 100%; margin-top: 10px; }
-  .tv-frame label { display: block; margin-top: 15px; font-weight: 700; color: var(--gold); }
+  .tv-screen { background-color: #0c1024; border-radius: 16px; padding: 24px 12px; border: 4px solid #1e1710; }
+  .tv-frame audio { width: 100%; }
+  .tv-frame label { display: block; margin-top: 15px; font-weight: 700; color: var(--gold); font-family: 'Baloo 2', sans-serif; letter-spacing: 0.5px; }
 
-  /* Gaming Arena settings */
   #game-area {
     width: 100%; max-width: 500px; height: 350px; margin: 30px auto 0; border-radius: 20px;
-    background: linear-gradient(180deg, rgba(20,27,60,0.3), rgba(20,27,60,0.8));
+    background: linear-gradient(180deg, rgba(20,27,60,0.4), rgba(13, 17, 40, 0.85));
     border: 2px solid rgba(246,215,139,0.25); position: relative; overflow: hidden; touch-action: none;
   }
   #basket {
@@ -151,19 +149,18 @@
   }
   .falling-item { position: absolute; pointer-events: none; user-select: none; font-size: 1.8rem; }
 
-  /* Secret Love Note modal overlay rules */
   #letter-overlay {
-    position: fixed; inset: 0; z-index: 100; background-color: rgba(10,13,32,0.9);
+    position: fixed; inset: 0; z-index: 100; background-color: rgba(10,13,32,0.92);
     display: none; align-items: center; justify-content: center; padding: 20px;
   }
   #letter-overlay.show { display: flex; }
   #letter-card {
     background-color: var(--cream); color: #2c2015; border-radius: 24px;
     padding: 35px; width: 100%; max-width: 500px; text-align: left;
-    max-height: 85vh; overflow-y: auto; box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    max-height: 85vh; overflow-y: auto; box-shadow: 0 35px 70px rgba(0,0,0,0.6);
   }
-  #letter-card h3 { font-size: 1.5rem; margin-bottom: 20px; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 10px; }
-  .letter-text { font-family: 'Caveat', cursive; font-size: 1.8rem; line-height: 1.5; color: #1a120b; }
+  #letter-card h3 { font-size: 1.6rem; margin-bottom: 20px; border-bottom: 2px solid rgba(44,32,21,0.1); padding-bottom: 10px; color: #4a3a2a; font-family: 'Baloo 2', sans-serif; }
+  .letter-text { font-family: 'Caveat', cursive; font-size: 1.9rem; line-height: 1.4; color: #1a120b; }
   .letter-text p { color: #1a120b; margin-bottom: 15px; }
 
   #fireworks-canvas { position: fixed; inset: 0; z-index: 99; pointer-events: none; }
@@ -186,7 +183,7 @@
       <div class="count-box"><div id="cd-days" class="count-num">00</div><div class="count-label">Days</div></div>
       <div class="count-box"><div id="cd-hours" class="count-num">00</div><div class="count-label">Hours</div></div>
       <div class="count-box"><div id="cd-mins" class="count-num">00</div><div class="count-label">Mins</div></div>
-      <div class="count-box"><div id="cd-secs" class="count-num">00</div><div class="count-label">Secs</div></div>
+            <div class="count-box"><div id="cd-secs" class="count-num">00</div><div class="count-label">Secs</div></div>
     </div>
 
     <button id="skip-btn" class="btn-outline">Skip Countdown for Testing ✨</button>
@@ -197,7 +194,7 @@
 <section id="cake-section" class="hidden">
   <div class="container">
     <h2 class="font-display">Make a Wish! 🎂</h2>
- <p>Try blowing directly into your device microphone, or tap the button below to blow out your candles!</p>
+    <p>Try blowing directly into your device microphone, or tap the button below to blow out your candles!</p>
     
     <div class="cake-container">
       <div class="candles-row">
@@ -215,31 +212,31 @@
   </div>
 </section>
 
-<!-- ============ HIDDEN SURPRISE SCRAPBOOK FRAMEWORK ============ -->
+<!-- ============ HIDDEN SURPRISE SCRAPBOOK WRAPPER ============ -->
 <div id="surprise-wrapper" class="hidden">
   
-  <!-- SECTION 3: POLAROID PHOTO FRAME MATRIX -->
+  <!-- SECTION 3: POLAROID GALLERY -->
   <section id="gallery-section">
     <div class="container">
       <h2 class="font-display">Our Magical Memories 🖼️</h2>
       <div class="grid-gallery">
         <div class="polaroid tilt-1">
-          <img src="photo1.png.png" alt="Memory 1" onerror="this.src='https://unsplash.com'">
+          <img src="photo1.png.png" alt="Memory 1">
           <p>Every day with you feels like magic ✨</p>
         </div>
         <div class="polaroid tilt-2">
-          <img src="photo2.png.png" alt="Memory 2" onerror="this.src='https://unsplash.com'">
+          <img src="photo2.png.png" alt="Memory 2">
           <p>Counting down the miles between us 🗺️</p>
         </div>
         <div class="polaroid tilt-3">
-          <img src="photo3.png.png" alt="Memory 3" onerror="this.src='https://unsplash.com'">
+          <img src="photo3.png.png" alt="Memory 3">
           <p>My favorite place is right next to you ❤️</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 4: MOVIE THEATER COMPONENT -->
+  <!-- SECTION 4: MOVIE THEATER DECK -->
   <section id="movies-section">
     <div class="container">
       <h2 class="font-display">Our Shared Movie Theater 🎬</h2>
@@ -247,28 +244,28 @@
       
       <div class="grid-movies">
         <div class="movie-card">
-          <div class="movie-art"><img src="howl.png" onerror="this.style.display='none'">🏰</div>
+          <div class="movie-art"><img src="howl.png" alt="Howl"></div>
           <div class="movie-info">
             <h3>Howl's Moving Castle</h3>
             <p>Wandering through magical doors, finding a beautiful home inside each other no matter the massive physical distance.</p>
           </div>
         </div>
         <div class="movie-card">
-          <div class="movie-art"><img src="whisper.png.jpg" onerror="this.style.display='none'">🎻</div>
+          <div class="movie-art"><img src="whisper.png.jpg" alt="Whisper"></div>
           <div class="movie-info">
             <h3>Whisper of the Heart</h3>
             <p>Our long-distance inspiration. Just like Shizuku and Seiji, we chase our dreams while safely holding onto each other.</p>
           </div>
         </div>
         <div class="movie-card">
-          <div class="movie-art"><img src="heron.png.jpg" onerror="this.style.display='none'">🪶</div>
+          <div class="movie-art"><img src="heron.png.jpg" alt="Heron"></div>
           <div class="movie-info">
             <h3>The Boy and the Heron</h3>
             <p>Navigating mysterious, unknown worlds and securely protecting the deep internal bonds that connect our lives across dimensions.</p>
           </div>
         </div>
         <div class="movie-card">
-          <div class="movie-art"><img src="kiki.png.jpg" onerror="this.style.display='none'">🧹</div>
+          <div class="movie-art"><img src="kiki.png.jpg" alt="Kiki"></div>
           <div class="movie-info">
             <h3>Kiki's Delivery Service</h3>
             <p>A cozy reminder that love, simple kindness, and a tiny bit of magic will always guide us safely back together.</p>
@@ -278,7 +275,7 @@
     </div>
   </section>
 
-  <!-- SECTION 5: MUSIC BROADCAST RECEIVERS -->
+  <!-- SECTION 5: KISHORE KUMAR TRACKS -->
   <section id="audio-section">
     <div class="container">
       <h2 class="font-display">Soundtrack of Us 🎵</h2>
@@ -301,11 +298,13 @@
     </div>
   </section>
 
-  <!-- SECTION 6: COLLECTOR ENGINE PANEL -->
+  <!-- SECTION 6: GAME PANEL -->
   <section id="game-section">
     <div class="container">
       <h2 class="font-display">Catch My Love! 🌠</h2>
-      <p>Move your mouse or slide your finger across the area to collect 10 items and unlock my secret note!</p>
+      <p>Click "Start Game" below and slide your finger across the area to collect 10 items and unlock my secret note!</p>
+      
+      <button id="start-game-btn" class="btn">🎮 Start Game</button>
       <div style="margin-top: 15px; font-size: 1.3rem; font-weight: bold;">Score: <span id="score-val" style="color: var(--gold);">0</span> / 10</div>
       
       <div id="game-area">
@@ -315,10 +314,13 @@
   </section>
 </div>
 
-<!-- ============ SECTION 7: NOTE DISPLAY OVERLAY ============ -->
+<!-- ============ SECTION 7: FIXED LOVE NOTE MODAL ============ -->
 <div id="letter-overlay">
   <div id="letter-card">
-    <h3>A Secret For You 💌</h3>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 2px solid rgba(44,32,21,0.1); padding-bottom: 10px;">
+      <h3 class="font-display" style="margin: 0; color: #4a3a2a;">A Secret For You 💌</h3>
+      <button id="close-letter-btn" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #4a3a2a; font-weight: bold;">✕</button>
+    </div>
     <div class="letter-text">
       <p>My Dearest,</p>
       <p>Happy Birthday! Even though miles keep us apart right now, you are in my heart with every single beat. Just like the moving castle or the dreamers in Whisper of the Heart, our distance is only temporary, but our love is timeless.</p>
@@ -329,8 +331,8 @@
 </div>
 
 <script>
-  // Setup countdown target details string format parameters (Set your boyfriend's birth date here)
-  const targetDate = new Date("2026-10-15T00:00:00").getTime();
+  // Target date set exactly to September 8, 2026
+  const targetDate = new Date("2026-09-08T00:00:00").getTime();
 
   function updateCountdown() {
     const now = new Date().getTime();
@@ -377,7 +379,6 @@
       document.getElementById("cake-section").classList.add("hidden");
       document.getElementById("surprise-wrapper").classList.remove("hidden");
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      startGame();
     }, 1000);
   }
 
@@ -407,7 +408,7 @@
             javascriptNode.onaudioprocess = null;
           }
         };
-      }).catch(e => console.log("Mic configuration rejected or locked: ", e));
+      }).catch(e => console.log("Mic off: ", e));
   }
 
   const starsContainer = document.getElementById("stars-container");
@@ -422,12 +423,15 @@
   }
 
   let score = 0;
+  let gameStarted = false;
   const gameArea = document.getElementById("game-area");
   const basket = document.getElementById("basket");
-  const scoreVal = document.getElementById("score-val");
+    const scoreVal = document.getElementById("score-val");
+  const startGameBtn = document.getElementById("start-game-btn");
   let gameInterval;
 
   function moveBasket(clientX) {
+    if (!gameStarted) return;
     const rect = gameArea.getBoundingClientRect();
     let x = clientX - rect.left - 35;
     if (x < 0) x = 0;
@@ -436,21 +440,29 @@
   }
   gameArea.addEventListener("mousemove", (e) => moveBasket(e.clientX));
   gameArea.addEventListener("touchmove", (e) => {
-    if(e.touches.length > 0) moveBasket(e.touches.clientX);
+    if(e.touches.length > 0) moveBasket(e.touches[0].clientX);
   });
-  function startGame() {
-    if (gameInterval) return;
+
+  startGameBtn.addEventListener("click", () => {
+    if (gameStarted) return;
+    gameStarted = true;
+    score = 0;
+    scoreVal.textContent = score;
+    startGameBtn.style.display = "none";
+    
     gameInterval = setInterval(() => {
       if (score >= 10) {
         clearInterval(gameInterval);
+        gameStarted = false;
         triggerSecretLetter();
         return;
       }
       createFallingItem();
     }, 1000);
-  }
+  });
 
   function createFallingItem() {
+    if (!gameStarted) return;
     const item = document.createElement("div");
     item.className = "falling-item";
     const symbols = ["⭐", "💖", "✨", "❤️"];
@@ -464,6 +476,7 @@
     let speed = 4;
     
     function fall() {
+      if (!gameStarted && score < 10) { item.remove(); return; }
       topPos += speed;
       item.style.top = `${topPos}px`;
       
@@ -492,6 +505,12 @@
     initFireworks();
   }
 
+  document.getElementById("close-letter-btn").addEventListener("click", () => {
+    document.getElementById("letter-overlay").classList.remove("show");
+    startGameBtn.style.display = "inline-block"; 
+    startGameBtn.textContent = "🎮 Play Again";
+  });
+
   function initFireworks() {
     const canvas = document.getElementById("fireworks-canvas");
     const ctx = canvas.getContext("2d");
@@ -505,13 +524,19 @@
       d() { ctx.save(); ctx.globalAlpha=this.a; ctx.beginPath(); ctx.arc(this.x,this.y,this.r,0,Math.PI*2); ctx.fillStyle=this.c; ctx.fill(); ctx.restore(); }
       u() { this.x+=this.vx; this.y+=this.vy; this.vy+=0.03; this.a-=0.015; }
     }
-    setInterval(() => {
+    let fireworkInterval = setInterval(() => {
+      if (!document.getElementById("letter-overlay").classList.contains("show")) {
+        clearInterval(fireworkInterval);
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        return;
+      }
       const colors = ["#f6d78b", "#f3aeb0", "#b9c3f2"];
       const tx = Math.random()*canvas.width, ty = Math.random()*(canvas.height*0.5);
       const tc = colors[Math.floor(Math.random()*colors.length)];
       for(let i=0;i<30;i++) particles.push(new P(tx,ty,tc));
     }, 900);
     function run() {
+      if (!document.getElementById("letter-overlay").classList.contains("show")) return;
       ctx.clearRect(0,0,canvas.width,canvas.height);
       particles = particles.filter(p => p.a > 0);
       particles.forEach(p => { p.u(); p.d(); });
@@ -522,4 +547,5 @@
 </script>
 </body>
 </html>
+
 
