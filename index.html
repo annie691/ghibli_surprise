@@ -334,27 +334,26 @@
 
 <script>
   // Target date set exactly to September 8, 2026
-  const targetDate = new Date("2026-09-08T00:00:00").getTime();
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const diff = targetDate - now;
+   // 10-Second Live Countdown Engine Setup
+  let timeLeft = 10;
 
-    if (diff <= 0) {
+  function updateCountdown() {
+    if (timeLeft <= 0) {
       clearInterval(cdInterval);
       showCakeSection();
       return;
     }
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+    // Safely sets your countdown metric display boxes to 00 while your seconds tick down smoothly
+    document.getElementById("cd-days").textContent = "00";
+    document.getElementById("cd-hours").textContent = "00";
+    document.getElementById("cd-mins").textContent = "00";
+    document.getElementById("cd-secs").textContent = String(timeLeft).padStart(2, '0');
 
-    document.getElementById("cd-days").textContent = String(days).padStart(2, '0');
-    document.getElementById("cd-hours").textContent = String(hours).padStart(2, '0');
-    document.getElementById("cd-mins").textContent = String(mins).padStart(2, '0');
-    document.getElementById("cd-secs").textContent = String(secs).padStart(2, '0');
+    timeLeft--;
   }
+
+  // Smoothly triggers your timer logic precisely every 1 second
   const cdInterval = setInterval(updateCountdown, 1000);
   updateCountdown();
 
@@ -427,7 +426,7 @@
   let gameStarted = false;
   const gameArea = document.getElementById("game-area");
   const basket = document.getElementById("basket");
-    const scoreVal = document.getElementById("score-val");
+  const scoreVal = document.getElementById("score-val");
   const startGameBtn = document.getElementById("start-game-btn");
   let gameInterval;
 
@@ -441,7 +440,7 @@
   }
   gameArea.addEventListener("mousemove", (e) => moveBasket(e.clientX));
   gameArea.addEventListener("touchmove", (e) => {
-    if(e.touches.length > 0) moveBasket(e.touches[0].clientX);
+    if(e.touches.length > 0) moveBasket(e.touches.clientX);
   });
 
   startGameBtn.addEventListener("click", () => {
@@ -548,5 +547,3 @@
 </script>
 </body>
 </html>
-
-
