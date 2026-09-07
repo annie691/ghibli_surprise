@@ -190,32 +190,39 @@
 
 <!-- ============ SECTION 2: VIRTUAL CAKE BLOW ============ -->
 <!-- Your current Cake Section -->
-<section id="cake-section"> 
-  <div class="container"> 
-    <h2 class="font-display">Make a Wish! 🎂</h2> 
-    <p>Tap the button below to blow out your candles!</p> 
-    <div class="cake-container"> 
-      <div class="candles-row"> 
-        <div class="candle c1"><div class="flame"></div></div> 
-        <div class="candle c2"><div class="flame"></div></div> 
-        <div class="candle c3"><div class="flame"></div></div> 
-      </div> 
-      <div class="cake-body"> 
-        <div class="cream-layer"></div> 
-        <div class="frosting"></div> 
-      </div> 
-    </div> 
-    <button id="blow-btn" class="btn">💨 Tap to Blow Out Candles!</button> 
-  </div> 
-</section>
-
-<!-- ADD THIS: The Next Section (hidden by default) -->
-<section id="next-section" class="hidden">
-  <div class="container">
-    <h2>🎉 Happy Birthday! 🎉</h2>
-    <p>Here is your surprise message...</p>
-  </div>
-</section>
+ .cake-plate{filter:drop-shadow(0 20px 25px rgba(0,0,0,.35));}
+  .flame{
+    animation:flicker 1.1s ease-in-out infinite alternate;
+    transform-origin:bottom center;
+  }
+  @keyframes flicker{
+    0%{transform:scaleY(1) scaleX(1) rotate(-2deg); opacity:1;}
+    50%{transform:scaleY(1.12) scaleX(.92) rotate(2deg); opacity:.9;}
+    100%{transform:scaleY(0.95) scaleX(1.05) rotate(-1deg); opacity:1;}
+  }
+  .flame.out{
+    animation:none !important;
+    opacity:0 !important;
+    transform:scaleY(0) !important;
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .smoke{
+    opacity:0; pointer-events:none;
+  }
+  .smoke.puff{
+    animation:puff 1.4s ease-out forwards;
+  }
+  @keyframes puff{
+    0%{opacity:.8; transform:translateY(0) scale(.5);}
+    100%{opacity:0; transform:translateY(-40px) scale(1.8);}
+  }
+  .mic-pulse{
+    animation:pulseRing 1.6s ease-out infinite;
+  }
+  @keyframes pulseRing{
+    0%{box-shadow:0 0 0 0 rgba(246,215,139,.55);}
+    100%{box-shadow:0 0 0 22px rgba(246,215,139,0);}
+  }
 
 <!-- ============ HIDDEN SURPRISE SCRAPBOOK WRAPPER ============ -->
 <div id="surprise-wrapper" class="hidden">
