@@ -187,7 +187,7 @@
       <div class="count-box"><div id="cd-secs" class="count-num">00</div><div class="count-label">Secs</div></div>
     </div> <!-- Added missing closing grid div -->
 
-    <button id="skip-btn" class="btn-outline">Skip Countdown for Testing ✨</button>
+    
   </div> <!-- Added missing closing container div -->
 </section>
 
@@ -357,10 +357,7 @@
   const cdInterval = setInterval(updateCountdown, 1000);
   updateCountdown();
 
-  document.getElementById("skip-btn").addEventListener("click", () => {
-    clearInterval(cdInterval);
-    showCakeSection();
-  });
+  
 
   function showCakeSection() {
     document.getElementById("countdown-section").classList.add("hidden");
