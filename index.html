@@ -195,7 +195,8 @@
 <!-- ============ SECTION 2: VIRTUAL CAKE BLOW ============ -->
       <!-- Your current Cake Section -->
 <!-- Locate this line and update it to look like this: -->
-<section id="cake-section">
+<section id="cake-section" class="hidden">
+
 
   <div class="container"> 
     <h2 class="font-display">Make a Wish! 🎂</h2> 
@@ -363,7 +364,8 @@
 
   function showCakeSection() {
     document.getElementById("countdown-section").classList.add("hidden");
-    document.getElementById("cake-section").classList.remove("hidden");
+     const cakeSec = document.getElementById("cake-section");
+  cakeSec.classList.remove("hidden");
     initMicAudio();
   }
 
